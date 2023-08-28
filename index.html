@@ -29,20 +29,31 @@
 <body>
     <h1>ทอยลูกเต๋า</h1>
     <p><img id = "roll1" src="./dice face/Alea_1.png"><img id = "roll2" src="./dice face/Alea_1.png"><img id = "roll3" src="./dice face/Alea_1.png"></p>
-    <button onclick="roll()">ทอย</button>
+    <button onclick="starstop()">ทอย</button>
     <script>
-        /*
+        let counter = 0;
+        let rolled
         let dice = ["./dice face/Alea_1.png","./dice face/Alea_2.png","./dice face/Alea_3.png","./dice face/Alea_4.png","./dice face/Alea_5.png","./dice face/Alea_6.png"]
         function roll(){
             document.getElementById("roll1").src = dice[Math.floor(Math.random() * 6)]
             document.getElementById("roll2").src = dice[Math.floor(Math.random() * 6)]
             document.getElementById("roll3").src = dice[Math.floor(Math.random() * 6)]
-        }*/
-        function roll(){
+        }
+        function starstop(){
+            if(counter == 0 ){
+                counter++
+                rolled = setInterval(roll, 100);
+            }
+            else{
+                counter = 0
+                clearInterval(rolled);
+            }
+        }
+        /*function roll(){
             document.getElementById("roll1").setAttribute("src","./dice face/Alea_"+(Math.floor(Math.random() * 6)+1)+".png")
             document.getElementById("roll2").setAttribute("src","./dice face/Alea_"+(Math.floor(Math.random() * 6)+1)+".png")
             document.getElementById("roll3").setAttribute("src","./dice face/Alea_"+(Math.floor(Math.random() * 6)+1)+".png")
-        }
+        }*/
     </script>
 </body>
 </html>
