@@ -29,7 +29,7 @@
 <body>
     <h1>ทอยลูกเต๋า</h1>
     <p><img id = "roll1" src="./dice face/Alea_1.png"><img id = "roll2" src="./dice face/Alea_1.png"><img id = "roll3" src="./dice face/Alea_1.png"></p>
-    <button onclick="starstop()">ทอย</button>
+    <button onclick="starstop()" id = "btn">ทอย</button>
     <script>
         let counter = 0;
         let rolled
@@ -43,10 +43,12 @@
             if(counter == 0 ){
                 counter++
                 rolled = setInterval(roll, 100);
+                document.getElementById("btn").innerText = 'หยุด'
             }
             else{
                 counter = 0
                 clearInterval(rolled);
+                document.getElementById("btn").innerText = 'ทอย'
             }
         }
         /*function roll(){
